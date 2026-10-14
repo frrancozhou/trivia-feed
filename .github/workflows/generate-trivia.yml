@@ -1,0 +1,30 @@
+name: Generate Trivia
+
+on:
+  schedule:
+    - cron: "0 23,11 * * *"   # 23:00 e 11:00 UTC (≈ mezzanotte e mezzogiorno Roma in inverno)
+  workflow_dispatch:
+
+jobs:
+  generate:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repo
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Run generator
+        run: |
+          python generate_trivia.py
+
+      - name: Commit and push changes
+        run: |
+          git config user.name "Trivia Bot"
+          git config user.email "trivia-bot@example.com"
+          git add trivia.json feed.xml
+          git commit -m "Update trivia and feed" || echo "No changes to commit"
+          git push

@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0">
+  <channel>
+    <title>Random Trivia Feed</title>
+    <link>https://frrancozhou.github.io/trivia-feed/feed.xml</link>
+    <description>Short poetic curiosities in English, updated every 12 hours.</description>
+  </channel>
+</rss>

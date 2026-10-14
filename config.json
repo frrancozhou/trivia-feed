@@ -1,0 +1,7 @@
+{
+  "prompt": "Generate a short curiosity in English, 10-15 words, with a slightly poetic tone, about any topic.",
+  "max_words_min": 10,
+  "max_words_max": 15,
+  "schedule": "0 23,11 * * *",
+  "use_copilot": true
+}
