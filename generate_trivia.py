@@ -38,7 +38,7 @@ def update_feed(trivia_list):
 <rss version="2.0">
   <channel>
     <title>Random Trivia Feed</title>
-    <link>https://TUO-USERNAME.github.io/trivia-feed/feed.xml</link>
+    <link>https://frrancozhou.github.io/trivia-feed/feed.xml</link>
     <description>Short poetic curiosities in English, updated every 12 hours.</description>
 {items_xml}
   </channel>
