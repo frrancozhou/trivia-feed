@@ -2,12 +2,13 @@ name: Generate Trivia
 
 on:
   schedule:
-    - cron: "0 23,11 * * *"   # 23:00 e 11:00 UTC (≈ mezzanotte e mezzogiorno Roma in inverno)
+    - cron: "0 23,11 * * *" # 23:00 e 11:00 UTC (≈ mezzanotte e mezzogiorno Roma in inverno)
   workflow_dispatch:
 
 jobs:
   generate:
     runs-on: ubuntu-latest
+
     steps:
       - name: Checkout repo
         uses: actions/checkout@v4
