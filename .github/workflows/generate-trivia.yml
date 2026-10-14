@@ -1,5 +1,9 @@
 name: Generate Trivia
 
+permissions:
+  contents: write
+
+
 on:
   schedule:
     - cron: "0 23,11 * * *" # 23:00 e 11:00 UTC (≈ mezzanotte e mezzogiorno Roma in inverno)
