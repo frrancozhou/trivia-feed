@@ -54,21 +54,12 @@ def main():
     prompt = config["prompt"]
     new_text = generate_with_copilot(prompt).strip()
 
-    # Genera finché non è vuota e non è duplicata
-attempts = 0
-while True:
-    new_text = generate_with_copilot(prompt).strip()
-    attempts += 1
+if not new_text:
+    return
 
-    if not new_text:
-        continue  # se è vuota, riprova
+if is_duplicate_exact(new_text, trivia_list):
+    return
 
-    if not is_duplicate_exact(new_text, trivia_list):
-        break  # trovata una frase nuova
-
-    if attempts > 5:
-        # evita loop infiniti se Copilot genera sempre la stessa frase
-        return
 
     now = datetime.now().strftime("%Y-%m-%dT%H:%M:%S")
     new_entry = {
