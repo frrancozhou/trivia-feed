@@ -54,12 +54,11 @@ def main():
     prompt = config["prompt"]
     new_text = generate_with_copilot(prompt).strip()
 
-if not new_text:
-    return
+    if not new_text:
+        return
 
-if is_duplicate_exact(new_text, trivia_list):
-    return
-
+    if is_duplicate_exact(new_text, trivia_list):
+        return
 
     now = datetime.now().strftime("%Y-%m-%dT%H:%M:%S")
     new_entry = {
